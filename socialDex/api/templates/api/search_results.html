@@ -1,0 +1,10 @@
+{% extends 'api/base.html' %}
+{% block title %}
+    <title>Search results</title>
+{% endblock %}
+{% block content %}
+    <h3>{{searched}} appeared in {{reference}} different posts</h3>
+    {% for post in posts_ref %}
+        <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+    {% endfor %}
+{% endblock %}

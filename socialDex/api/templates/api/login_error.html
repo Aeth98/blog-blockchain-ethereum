@@ -1,0 +1,7 @@
+{% extends 'api/base.html' %}
+{% block title %}
+    <title>Login error</title>
+{% endblock %}
+{% block content %}
+    <h3>You aren't logged in. <a href="{% url 'loginpage' %}">Login</a> first</h3>
+{% endblock %}

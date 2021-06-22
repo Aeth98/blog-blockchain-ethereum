@@ -1,0 +1,23 @@
+{% extends 'api/base.html' %}
+{% block title %}
+    <title>Posts List</title>
+{% endblock %}
+{% block content %}
+<form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search_results' %}">{% csrf_token %}
+    {{ form.as_p }}
+    <input class="form-control mr-sm-2" type="search" name="search">
+    <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"> Search </button>
+</form>
+    <h3><a href="{% url 'logoutpage' %}">Logout</a></h3>
+    <h3><a href="{% url 'new_post' %}">Create a new Post</a></h3>
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+    {% for post in posts %}
+    <article>
+        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}<a/></h1>
+        <time>published: {{ post.datetime }} by: {{post.user}}</time>
+        <p>{{ post.content|linebreaksbr }}</p>
+    </article>
+    {% endfor %}
+{% endblock %}

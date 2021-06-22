@@ -1,0 +1,2 @@
+Il blog creato dovrebbe avere tutte le funzionalita' richieste, pecca pero' di una grafica accattivante.
+Volevo pero' prima avere un feedback su queste funzionalita' e poi solo in seguito concentrarmi sul html e css, perche' penso che non siano le skills da sviluppare in questo momento.

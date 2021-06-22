@@ -1,0 +1,13 @@
+{% extends 'api/base.html' %}
+{% block title %}
+    <title>Post Detail</title>
+{% endblock %}
+{% block content %}
+    <time>published: {{ post.datetime }} by {{ post.user }}</time>
+    <h1>{{ post.title }}</h1>
+    <h3>{{ post.content }}</h3>
+    <br>
+    <br>
+    <h6>Post hash is: {{ post.hash }}</h6>
+    <h6>Post transaction id on Ethereum Blockchain is: {{ post.txId }}</h6>
+{% endblock %}

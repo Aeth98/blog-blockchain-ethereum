@@ -1,0 +1,17 @@
+{% extends 'api/base.html' %}
+{% block title %}
+    <title>Users Posts</title>
+{% endblock %}
+{% block content %}
+    {% for user in users %}
+        <h4>
+            User: {{ user.username }}, number of posts:
+            {% for key, value in number_posts.items %}
+                {% if key == user %}
+                    {{ value }}
+                {% endif %}
+            {% endfor %}
+        </h4>
+        <a href="{% url 'user_id' id=user.id %}" >Details</a>
+    {% endfor %}
+{% endblock %}
